@@ -13,7 +13,7 @@ protected void dfs(int row, int col) {
 	myGrid [row][col] = FULL;
 	int size = myGrid.length;
 	qu.add(row*myGrid.length + col);
-	System.out.println(row*myGrid.length + col);
+	//System.out.println(row*myGrid.length + col);
 	while (qu.size() != 0) {
 		Integer i = qu.remove();
 		//System.out.println(i);
@@ -21,23 +21,23 @@ protected void dfs(int row, int col) {
 		int ccol = i % size;
 		if (inBounds(rrow + 1, ccol) && isOpen(rrow +1, ccol) && ! isFull(rrow +1, ccol)) {
 			qu.add(i + size);
-			System.out.println(i + size);
+			//System.out.println(i + size);
 			myGrid[rrow + 1][ccol] = FULL;
 		}
 		if(inBounds(rrow - 1, ccol) && isOpen(rrow -1, ccol) && ! isFull(rrow -1, ccol)) {
 			qu.add(i - size);
 			myGrid[rrow - 1][ccol] = FULL;
-			System.out.println(i - size);
+			//System.out.println(i - size);
 		}
 		if(inBounds(rrow, ccol + 1) && isOpen(rrow, ccol + 1) && ! isFull(rrow, ccol + 1)) {
 			qu.add(i + 1);
 			myGrid[rrow][ccol + 1] = FULL;
-			System.out.println(i + 1);
+			//System.out.println(i + 1);
 		}
 		 if(inBounds(rrow, ccol - 1) && isOpen(rrow, ccol - 1) && ! isFull(rrow, ccol - 1)) {
 			qu.add(i - 1);
 			myGrid[rrow][ccol - 1] = FULL;
-			System.out.println(i - 1);
+			//System.out.println(i - 1);
 		}
 	}
 }
